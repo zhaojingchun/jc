@@ -1,2 +1,14 @@
 .idea/
 jc.iml
+app-dao/app-dao.iml
+app-domain/app-domain.iml
+app-domain/target/
+app-manager/app-manager.iml
+app-service/app-service.iml
+app-util/app-util.iml
+app-web/app-web.iml
+app-dao/target/
+app-manager/target/
+app-service/target/
+app-util/target/
+app-web/target/
