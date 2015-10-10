@@ -34,12 +34,12 @@ public class HttpClientUtil {
         this.charSet = charSet;
     }
 
-    public String executeHttpRequest(String url, String requestContent) {
+    public String executeHttpRequest(String url, String requestContent,String contentType) {
         HttpClient client = new HttpClient();
         BufferedReader in = null;
         PostMethod postMethod = new PostMethod(url);
         try {
-            postMethod.setRequestEntity(new StringRequestEntity(requestContent, "text/xml; charset=" + charSet, charSet));
+            postMethod.setRequestEntity(new StringRequestEntity(requestContent, contentType, charSet));
             postMethod.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler());
             postMethod.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, charSet);
             postMethod.getParams().setParameter(HttpMethodParams.SO_TIMEOUT, soTimeOut);
@@ -81,6 +81,22 @@ public class HttpClientUtil {
             }
         }
         return null;
+    }
+
+    public String httpJsonRequest(String url, String requestContent) {
+        String contentType =  "application/json; charset=" + charSet;
+        return executeHttpRequest(url,requestContent,contentType);
+    }
+
+    public String httpXmlRequest(String url, String requestContent) {
+        String contentType = "text/xml; charset=" + charSet;
+        return executeHttpRequest(url,requestContent,contentType);
+    }
+
+    public String httpFormRequest(String url, String requestContent) {
+        String contentType = "application/x-www-form-urlencoded; charset=" + charSet;
+        return executeHttpRequest(url,requestContent,contentType);
+
     }
 
 }

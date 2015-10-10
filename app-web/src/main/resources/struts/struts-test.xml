@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="test" namespace="/test" extends="base-struts">
+        <!--退款ICE接口测试-->
+        <action name="*" method="{1}" class="com.jc.TestAction">
+            <result name="init">/WEB-INF/vm/icetest/refundICETest.vm</result>
+            <result>/WEB-INF/vm/icetest/{1}.vm</result>
+        </action>
+    </package>
+</struts>

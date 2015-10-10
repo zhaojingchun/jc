@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profilesXml xmlns="http://maven.apache.org/PROFILES/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/PROFILES/1.0.0 http://maven.apache.org/xsd/profiles-1.0.0.xsd">
+    <profiles>
+        <profile>
+            <!--测试环境-->
+            <id>development</id>
+            <properties>
+                <!--写库-->
+                <jc.read.jdbc.driver>com.mysql.jdbc.Driver</jc.read.jdbc.driver>
+                <jc.read.jdbc.url>jdbc:mysql://127.0.0.1:3306/dbo</jc.read.jdbc.url>
+                <jc.read.jdbc.username>root</jc.read.jdbc.username>
+                <jc.read.jdbc.password></jc.read.jdbc.password>
+                 <!--读库-->
+                <jc.write.jdbc.driver>com.mysql.jdbc.Driver</jc.write.jdbc.driver>
+                <jc.write.jdbc.url>jdbc:mysql://127.0.0.1:3306/dbo</jc.write.jdbc.url>
+                <jc.write.jdbc.username>root</jc.write.jdbc.username>
+                <jc.write.jdbc.password></jc.write.jdbc.password>
+            </properties>
+        </profile>
+    </profiles>
+</profilesXml>
