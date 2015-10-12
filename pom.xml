@@ -43,6 +43,20 @@
                     <encoding>utf-8</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>utf-8</encoding>
+                    <!--解决com.sun.image.codec.jpeg.JPEGCodec 是 Sun 的专用 API，可能会在未来版本中删除-->
+                    <compilerArguments>
+                        <verbose />
+                        <bootclasspath>${java.home}\lib\rt.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

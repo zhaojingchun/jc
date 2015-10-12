@@ -1,7 +1,7 @@
 package com.jc.util;
 
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * Created with IntelliJ IDEA.
