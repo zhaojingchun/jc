@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.*;
 
-import net.jcip.annotations.*;
+//import net.jcip.annotations.*;
 
 /**
  * ListHelder
@@ -13,7 +13,7 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@NotThreadSafe
+//@NotThreadSafe
 class BadListHelper <E> {
     public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 
@@ -25,7 +25,7 @@ class BadListHelper <E> {
     }
 }
 
-@ThreadSafe
+//@ThreadSafe
 class GoodListHelper <E> {
     public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 
