@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.concurrent.*;
 
-import net.jcip.annotations.*;
 
 /**
  * LogService
@@ -17,8 +16,8 @@ public class LogService {
     private final BlockingQueue<String> queue;
     private final LoggerThread loggerThread;
     private final PrintWriter writer;
-    @GuardedBy("this") private boolean isShutdown;
-    @GuardedBy("this") private int reservations;
+    private boolean isShutdown;
+    private int reservations;
 
     public LogService(Writer writer) {
         this.queue = new LinkedBlockingQueue<String>();

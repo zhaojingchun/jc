@@ -2,7 +2,6 @@ package net.jcip.examples;
 
 import java.util.concurrent.atomic.*;
 
-import net.jcip.annotations.*;
 
 /**
  * LinkedQueue
@@ -11,7 +10,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class LinkedQueue <E> {
 
     private static class Node <E> {

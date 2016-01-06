@@ -3,7 +3,6 @@ package net.jcip.examples;
 import java.math.BigInteger;
 import java.util.*;
 
-import net.jcip.annotations.*;
 
 /**
  * OneValueCache
@@ -12,7 +11,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@Immutable
 public class OneValueCache {
     private final BigInteger lastNumber;
     private final BigInteger[] lastFactors;

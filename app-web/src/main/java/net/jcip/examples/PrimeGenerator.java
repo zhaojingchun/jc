@@ -5,7 +5,6 @@ import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.*;
 
-import net.jcip.annotations.*;
 
 /**
  * PrimeGenerator
@@ -14,11 +13,10 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class PrimeGenerator implements Runnable {
     private static ExecutorService exec = Executors.newCachedThreadPool();
 
-    @GuardedBy("this") private final List<BigInteger> primes
+    private final List<BigInteger> primes
             = new ArrayList<BigInteger>();
     private volatile boolean cancelled;
 

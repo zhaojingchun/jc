@@ -1,6 +1,8 @@
 package com.jc.dao;
 
 import com.jc.domain.User;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,5 +14,6 @@ import java.util.Map;
  */
 public  interface FirstDao {
     public User getUserByid(Map map);
+    int batchUpdate(List<Object> list);
 }
 

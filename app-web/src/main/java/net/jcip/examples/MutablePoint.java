@@ -1,6 +1,5 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
 
 /**
  * MutablePoint
@@ -9,7 +8,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@NotThreadSafe
 public class MutablePoint {
     public int x, y;
 

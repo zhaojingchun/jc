@@ -1,6 +1,5 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
 
 /**
  * MutableInteger
@@ -10,7 +9,6 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@NotThreadSafe
 public class MutableInteger {
     private int value;
 

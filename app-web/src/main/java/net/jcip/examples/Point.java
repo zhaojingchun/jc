@@ -1,6 +1,5 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
 
 /**
  * Point
@@ -9,7 +8,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@Immutable
 public class Point {
     public final int x, y;
 

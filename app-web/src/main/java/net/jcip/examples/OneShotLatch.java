@@ -2,7 +2,6 @@ package net.jcip.examples;
 
 import java.util.concurrent.locks.*;
 
-import net.jcip.annotations.*;
 
 /**
  * OneShotLatch
@@ -11,7 +10,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class OneShotLatch {
     private final Sync sync = new Sync();
 
