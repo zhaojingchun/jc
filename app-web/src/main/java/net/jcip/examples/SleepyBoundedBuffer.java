@@ -1,6 +1,6 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
+
 
 /**
  * SleepyBoundedBuffer
@@ -9,7 +9,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
         public class SleepyBoundedBuffer <V> extends BaseBoundedBuffer<V> {
     int SLEEP_GRANULARITY = 60;
 

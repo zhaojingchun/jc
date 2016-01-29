@@ -3,7 +3,7 @@ package net.jcip.examples;
 import java.math.BigInteger;
 import javax.servlet.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * Factorizer
@@ -12,7 +12,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class Factorizer extends GenericServlet implements Servlet {
     private final Computable<BigInteger, BigInteger[]> c =
             new Computable<BigInteger, BigInteger[]>() {

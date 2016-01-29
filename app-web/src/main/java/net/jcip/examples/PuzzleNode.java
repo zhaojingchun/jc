@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * PuzzleNode
@@ -11,7 +11,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@Immutable
+
 public class PuzzleNode <P, M> {
     final P pos;
     final M move;

@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.concurrent.locks.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * SemaphoreOnLock
@@ -12,12 +12,12 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class SemaphoreOnLock {
     private final Lock lock = new ReentrantLock();
     // CONDITION PREDICATE: permitsAvailable (permits > 0)
     private final Condition permitsAvailable = lock.newCondition();
-    @GuardedBy("lock") private int permits;
+      private int permits;
 
     SemaphoreOnLock(int initialPermits) {
         lock.lock();

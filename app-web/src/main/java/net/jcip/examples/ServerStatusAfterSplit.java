@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * ServerStatusAfterSplit
@@ -11,10 +11,10 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class ServerStatusAfterSplit {
-    @GuardedBy("users") public final Set<String> users;
-    @GuardedBy("queries") public final Set<String> queries;
+      public final Set<String> users;
+      public final Set<String> queries;
 
     public ServerStatusAfterSplit() {
         users = new HashSet<String>();

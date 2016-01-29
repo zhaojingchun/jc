@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 import java.awt.*;
 import java.awt.Point;
 
-import net.jcip.annotations.*;
+
 
 /**
  * DelegatingVehicleTracker
@@ -14,7 +14,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class DelegatingVehicleTracker {
     private final ConcurrentMap<String, Point> locations;
     private final Map<String, Point> unmodifiableMap;

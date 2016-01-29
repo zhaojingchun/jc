@@ -1,6 +1,6 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
+
 
 /**
  * Sequence
@@ -8,9 +8,9 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@ThreadSafe
+
 public class Sequence {
-    @GuardedBy("this") private int nextValue;
+      private int nextValue;
 
     public synchronized int getNext() {
         return nextValue++;

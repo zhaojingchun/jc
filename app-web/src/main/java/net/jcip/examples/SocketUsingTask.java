@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.concurrent.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * SocketUsingTask
@@ -15,7 +15,7 @@ import net.jcip.annotations.*;
  */
 
 public abstract class SocketUsingTask <T> implements CancellableTask<T> {
-    @GuardedBy("this") private Socket socket;
+      private Socket socket;
 
     protected synchronized void setSocket(Socket s) {
         socket = s;
@@ -45,12 +45,11 @@ public abstract class SocketUsingTask <T> implements CancellableTask<T> {
 
 interface CancellableTask <T> extends Callable<T> {
     void cancel();
-
     RunnableFuture<T> newTask();
 }
 
 
-@ThreadSafe
+
 class CancellingExecutor extends ThreadPoolExecutor {
     public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
         super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);

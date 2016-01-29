@@ -1,6 +1,6 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
+
 
 /**
  * UnsafeLazyInitialization
@@ -9,7 +9,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@NotThreadSafe
+
 public class UnsafeLazyInitialization {
     private static Resource resource;
 

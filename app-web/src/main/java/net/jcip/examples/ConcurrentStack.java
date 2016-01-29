@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.concurrent.atomic.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * ConcurrentStack
@@ -11,7 +11,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
         public class ConcurrentStack <E> {
     AtomicReference<Node<E>> top = new AtomicReference<Node<E>>();
 

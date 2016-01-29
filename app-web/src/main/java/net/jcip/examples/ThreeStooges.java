@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * ThreeStooges
@@ -12,7 +12,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@Immutable
+
  public final class ThreeStooges {
     private final Set<String> stooges = new HashSet<String>();
 

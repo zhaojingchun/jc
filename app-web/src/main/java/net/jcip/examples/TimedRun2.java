@@ -14,12 +14,9 @@ import static net.jcip.examples.LaunderThrowable.launderThrowable;
 public class TimedRun2 {
     private static final ScheduledExecutorService cancelExec = newScheduledThreadPool(1);
 
-    public static void timedRun(final Runnable r,
-                                long timeout, TimeUnit unit)
-            throws InterruptedException {
+    public static void timedRun(final Runnable r,long timeout, TimeUnit unit)throws InterruptedException {
         class RethrowableTask implements Runnable {
             private volatile Throwable t;
-
             public void run() {
                 try {
                     r.run();

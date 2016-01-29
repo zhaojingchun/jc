@@ -1,6 +1,6 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
+
 
 /**
  * DoubleCheckedLocking
@@ -9,7 +9,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@NotThreadSafe
+
 public class DoubleCheckedLocking {
     private static Resource resource;
 

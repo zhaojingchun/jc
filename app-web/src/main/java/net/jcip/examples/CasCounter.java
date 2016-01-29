@@ -1,6 +1,6 @@
 package net.jcip.examples;
 
-//import net.jcip.annotations.*;
+//
 
 /**
  * CasCounter
@@ -9,7 +9,7 @@ package net.jcip.examples;
  *
  * @author Brian Goetz and Tim Peierls
  */
-//@ThreadSafe
+//
 public class CasCounter {
     private SimulatedCAS value;
 

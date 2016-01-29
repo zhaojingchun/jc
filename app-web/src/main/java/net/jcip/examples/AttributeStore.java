@@ -3,7 +3,7 @@ package net.jcip.examples;
 import java.util.*;
 import java.util.regex.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * AttributeStore
@@ -12,9 +12,9 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class AttributeStore {
-    @GuardedBy("this") private final Map<String, String>
+    private final Map<String, String>
             attributes = new HashMap<String, String>();
 
     public synchronized boolean userLocationMatches(String name,

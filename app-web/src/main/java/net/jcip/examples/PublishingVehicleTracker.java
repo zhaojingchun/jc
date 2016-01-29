@@ -3,7 +3,7 @@ package net.jcip.examples;
 import java.util.*;
 import java.util.concurrent.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * PublishingVehicleTracker
@@ -12,7 +12,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class PublishingVehicleTracker {
     private final Map<String, SafePoint> locations;
     private final Map<String, SafePoint> unmodifiableMap;

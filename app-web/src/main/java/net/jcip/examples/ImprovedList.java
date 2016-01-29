@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.*;
 
-//import net.jcip.annotations.*;
+//
 
 /**
  * ImprovedList
@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-//@ThreadSafe
+//
 public class ImprovedList<T> implements List<T> {
     private final List<T> list;
 

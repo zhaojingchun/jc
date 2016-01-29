@@ -3,7 +3,7 @@ package net.jcip.examples;
 import java.math.BigInteger;
 import javax.servlet.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * SynchronizedFactorizer
@@ -13,10 +13,10 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@ThreadSafe
+
 public class SynchronizedFactorizer extends GenericServlet implements Servlet {
-    @GuardedBy("this") private BigInteger lastNumber;
-    @GuardedBy("this") private BigInteger[] lastFactors;
+      private BigInteger lastNumber;
+      private BigInteger[] lastFactors;
 
     public synchronized void service(ServletRequest req,
                                      ServletResponse resp) {

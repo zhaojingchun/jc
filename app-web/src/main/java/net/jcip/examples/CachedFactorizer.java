@@ -3,7 +3,7 @@ package net.jcip.examples;
 import java.math.BigInteger;
 import javax.servlet.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * CachedFactorizer
@@ -12,12 +12,12 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class CachedFactorizer extends GenericServlet implements Servlet {
-    @GuardedBy("this") private BigInteger lastNumber;
-    @GuardedBy("this") private BigInteger[] lastFactors;
-    @GuardedBy("this") private long hits;
-    @GuardedBy("this") private long cacheHits;
+      private BigInteger lastNumber;
+      private BigInteger[] lastFactors;
+      private long hits;
+      private long cacheHits;
 
     public synchronized long getHits() {
         return hits;

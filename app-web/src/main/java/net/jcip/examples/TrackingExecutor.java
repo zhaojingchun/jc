@@ -12,8 +12,7 @@ import java.util.concurrent.*;
  */
 public class TrackingExecutor extends AbstractExecutorService {
     private final ExecutorService exec;
-    private final Set<Runnable> tasksCancelledAtShutdown =
-            Collections.synchronizedSet(new HashSet<Runnable>());
+    private final Set<Runnable> tasksCancelledAtShutdown =Collections.synchronizedSet(new HashSet<Runnable>());
 
     public TrackingExecutor(ExecutorService exec) {
         this.exec = exec;
@@ -35,8 +34,7 @@ public class TrackingExecutor extends AbstractExecutorService {
         return exec.isTerminated();
     }
 
-    public boolean awaitTermination(long timeout, TimeUnit unit)
-            throws InterruptedException {
+    public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
         return exec.awaitTermination(timeout, unit);
     }
 
@@ -52,8 +50,7 @@ public class TrackingExecutor extends AbstractExecutorService {
                 try {
                     runnable.run();
                 } finally {
-                    if (isShutdown()
-                            && Thread.currentThread().isInterrupted())
+                    if (isShutdown()&& Thread.currentThread().isInterrupted())
                         tasksCancelledAtShutdown.add(runnable);
                 }
             }

@@ -17,7 +17,7 @@ public class IndexingService {
     private final IndexerThread consumer = new IndexerThread();
     private final CrawlerThread producer = new CrawlerThread();
     private final BlockingQueue<File> queue;
-    private final FileFilter fileFilter;
+    private final FileFilter fileFilter; //文件过滤器
     private final File root;
 
     public IndexingService(File root, final FileFilter fileFilter) {
@@ -33,8 +33,11 @@ public class IndexingService {
     private boolean alreadyIndexed(File f) {
         return false;
     }
-
+    //生产者
     class CrawlerThread extends Thread {
+        /**
+         * 最后放入一个结束文件
+         */
         public void run() {
             try {
                 crawl(root);
@@ -50,6 +53,11 @@ public class IndexingService {
             }
         }
 
+        /**
+         * 遍历所有文件，放到队列里
+         * @param root
+         * @throws InterruptedException
+         */
         private void crawl(File root) throws InterruptedException {
             File[] entries = root.listFiles(fileFilter);
             if (entries != null) {
@@ -62,7 +70,7 @@ public class IndexingService {
             }
         }
     }
-
+    //消费者
     class IndexerThread extends Thread {
         public void run() {
             try {

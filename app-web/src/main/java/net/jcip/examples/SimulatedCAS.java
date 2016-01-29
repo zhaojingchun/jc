@@ -1,6 +1,6 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
+
 
 /**
  * SimulatedCAS
@@ -10,9 +10,9 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@ThreadSafe
+
 public class SimulatedCAS {
-    @GuardedBy("this") private int value;
+      private int value;
 
     public synchronized int get() {
         return value;

@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.concurrent.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * BoundedExecutor
@@ -11,7 +11,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class BoundedExecutor {
     private final Executor exec;
     private final Semaphore semaphore;
@@ -21,8 +21,7 @@ public class BoundedExecutor {
         this.semaphore = new Semaphore(bound);
     }
 
-    public void submitTask(final Runnable command)
-            throws InterruptedException {
+    public void submitTask(final Runnable command)throws InterruptedException {
         semaphore.acquire();
         try {
             exec.execute(new Runnable() {

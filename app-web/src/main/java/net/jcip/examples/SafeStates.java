@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * SafeStates
@@ -11,7 +11,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class SafeStates {
     private final Map<String, String> states;
 

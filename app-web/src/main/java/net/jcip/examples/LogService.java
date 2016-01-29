@@ -29,6 +29,10 @@ public class LogService {
         loggerThread.start();
     }
 
+    /**
+     * 停止线程
+     * 并请求终端线程
+     */
     public void stop() {
         synchronized (this) {
             isShutdown = true;
@@ -36,6 +40,12 @@ public class LogService {
         loggerThread.interrupt();
     }
 
+    /**
+     * 如果线程关闭了，报异常
+     * 否则数量+1
+     * @param msg
+     * @throws InterruptedException
+     */
     public void log(String msg) throws InterruptedException {
         synchronized (this) {
             if (isShutdown)
@@ -45,6 +55,11 @@ public class LogService {
         queue.put(msg);
     }
 
+    /**
+     * 如果关闭了loger线程
+     * 并且没有线程需要些
+     * 线程结束
+     */
     private class LoggerThread extends Thread {
         public void run() {
             try {

@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.concurrent.atomic.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * CasNumberRange
@@ -11,9 +11,9 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
         public class CasNumberRange {
-    @Immutable
+
             private static class IntPair {
         // INVARIANT: lower <= upper
         final int lower;

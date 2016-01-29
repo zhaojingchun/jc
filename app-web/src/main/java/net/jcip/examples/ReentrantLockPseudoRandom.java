@@ -2,7 +2,7 @@ package net.jcip.examples;
 
 import java.util.concurrent.locks.*;
 
-import net.jcip.annotations.*;
+
 
 /**
  * ReentrantLockPseudoRandom
@@ -11,7 +11,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class ReentrantLockPseudoRandom extends PseudoRandom {
     private final Lock lock = new ReentrantLock(false);
     private int seed;
