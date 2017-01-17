@@ -15,7 +15,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
     <!--<context:component-scan base-package="me.gacl.dao,me.gacl.service" />-->
     <!--<context:component-scan base-package="com.jc.dao" />-->
     <import resource="spring/spring-config-service.xml"/>
-    <import resource="spring/spring-ibatis.xml"/>
-    <import resource="spring/spring-config-dao.xml"/>
+    <!--<import resource="spring/spring-ibatis.xml"/>-->
+    <!--<import resource="spring/spring-config-dao.xml"/>-->
 
 </beans>

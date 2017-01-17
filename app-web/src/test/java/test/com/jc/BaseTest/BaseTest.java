@@ -25,7 +25,7 @@ public abstract class BaseTest {
         try {
             long start = System.currentTimeMillis();
             System.out.println("正在加载配置文件...");
-            appContext =  new ClassPathXmlApplicationContext(new String[]{"struts.xml","spring.xml","spring/spring-config-service.xml"});
+            appContext =  new ClassPathXmlApplicationContext(new String[]{"spring.xml"});
             System.out.println("配置文件加载完毕,耗时：" + (System.currentTimeMillis() - start));
         } catch (Exception e) {
             e.printStackTrace();
