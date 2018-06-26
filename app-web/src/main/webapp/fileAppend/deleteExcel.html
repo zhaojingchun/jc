@@ -68,6 +68,7 @@
             var resultData = $("#resultData");
             resultData.empty();
             var dataSource = $("#dataSource").val();
+            dataSource = arrayDouhao(dataSource)
             var trArr = getTrs(dataSource)
 			var appendData = "";
             for(i=0;i<trArr.length;i++){
@@ -82,9 +83,23 @@
             }
         }
 
-String.prototype.replaceAll = function(s1,s2){ 
-return this.replace(new RegExp(s1,"gm"),s2); 
-}
+
+
+
+
+        String.prototype.replaceAll = function(s1,s2){
+             return this.replace(new RegExp(s1,"gm"),s2);
+        }
+
+        /**
+         * 把双引号中的英文逗号变成中文逗号
+         */
+        function arrayDouhao(str){
+            var regex="(\".*?),(.*?\")";
+            return str.replaceAll(regex,"$1，$2");
+
+        }
+
         /**
          * 获取行数据
          */
