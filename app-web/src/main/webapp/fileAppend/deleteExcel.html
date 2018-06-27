@@ -10,8 +10,8 @@
 	  
         源文件: <input type="file" name="file" onchange="addSourceData(this,'#dataSource')" /> <br>
 		第X列: <input id="orderColume" type="text" value="113"  style="width:200px"/> 包含：<input id="haveStr" type="text" value="跟单"  style="width:200px"/>的留下，下面的列 <br>
-		<input id="haveColume" type="text" value="1,2,5,8,31,54,55,112,113,141"  style="width:800px"/>(多列用英文逗号分隔) <br>
-		
+		<input id="haveColume" type="text" value=""  style="width:800px"/>(多列用英文逗号分隔) <br>
+        1,2,5,8,31,54,55,112,113,141
         <button id ="execute" onclick="appendExecute();" >执行</button>
 
         <textarea  id="dataSource"   style="height: 200px;width:10000px;"></textarea>
@@ -62,12 +62,14 @@
          * 追加数据
          */
         function appendData(){
+
 			var haveStr = $("#haveStr").val()
 			var orderColume = $("#orderColume").val()
 			var haveData =  $("#haveColume").val().split(",");
             var resultData = $("#resultData");
             resultData.empty();
             var dataSource = $("#dataSource").val();
+            //把双引号中的英文到后替换正中文逗号
             dataSource = arrayDouhao(dataSource)
             var trArr = getTrs(dataSource)
 			var appendData = "";
@@ -95,9 +97,11 @@
          * 把双引号中的英文逗号变成中文逗号
          */
         function arrayDouhao(str){
-            var regex="(\".*?),(.*?\")";
-            return str.replaceAll(regex,"$1，$2");
-
+            var regex=RegExp("(\".*?),(.*?\")");
+            while(regex.test(str)){
+                str = str.replaceAll(regex,"$1，$2");
+            }
+            return str;
         }
 
         /**
