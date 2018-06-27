@@ -7,11 +7,14 @@
     </head>
 
     <body>
-	  
-        源文件: <input type="file" name="file" onchange="addSourceData(this,'#dataSource')" /> <br>
-		第X列: <input id="orderColume" type="text" value="113"  style="width:200px"/> 包含：<input id="haveStr" type="text" value="跟单"  style="width:200px"/>的留下，下面的列 <br>
+        源文件: <input type="file" name="file" onchange="addSourceData(this,'#dataSource')" />
+		套系选择：<select id="pageType">
+                    <option value="cxdb">查询导表</option>
+                    <option value="tsdb">投诉导表</option>
+                </select> <br> <hr>
+        第X列: <input id="orderColume" type="text" value=""  style="width:200px"/> 包含：<input id="haveStr" type="text" value=""  style="width:200px"/>的留下，下面的列 <br>
 		<input id="haveColume" type="text" value=""  style="width:800px"/>(多列用英文逗号分隔) <br>
-        1,2,5,8,31,54,55,112,113,141
+
         <button id ="execute" onclick="appendExecute();" >执行</button>
 
         <textarea  id="dataSource"   style="height: 200px;width:10000px;"></textarea>
@@ -24,6 +27,42 @@
     </body>
 
     <script type="text/javascript">
+
+        $(function(){
+            var pageInfo={
+                "cxdb":{
+                    "name":"查询导表",
+                    "haveStr":"跟单",
+                    "orderColume":60,
+                    "haveColume":"1,2,8,54,55,60,112,113,141"
+                },
+                "tsdb":{
+                    "name":"投诉导表",
+                    "haveStr":"跟单",
+                    "orderColume":155,
+                    "haveColume":"1,2,8,54,55,155,163,164,173"
+                }
+            }
+
+            $("#pageType").bind("change",function(){
+                var $this = $(this);
+                console.log(pageInfo[$this.val()])
+                var page = pageInfo[$this.val()];
+
+              $("#orderColume").val(page.orderColume);
+              $("#haveStr").val(page.haveStr);
+              $("#haveColume").val(page.haveColume);
+            })
+
+            $("#pageType").trigger("change")
+
+        })
+
+
+
+
+
+
 	    
         //源数据id
         sourceIds = [];
@@ -141,7 +180,6 @@
                 window.URL.revokeObjectURL(url);
             }, 5);
         }
-		
 
 
 
